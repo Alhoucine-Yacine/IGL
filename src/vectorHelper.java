@@ -14,27 +14,56 @@ public class vectorHelper {
     public int mintab,maxtab;
     Scanner sc = new Scanner(System.in);
 
-    private int formule(int x){
-       return x*2;
-    }
-
-    public void appFormulea(){
-        for (int i = 0 ; i < this.nbElements ; i++ ){
-            intTab[i]=formule(intTab[i]);
-        }
-    }
-
     public void lect1d(int n,int nb) {
         for (int i = 0; i < n; i++) {
             if (nb==1) {
-            intTab[i] = sc.nextInt();
-            nbElements++;}
+                intTab[i] = sc.nextInt();
+                nbElements++;}
             else {
                 intTab2[i] = sc.nextInt();
                 nbElements2++;}
         }
 
     }
+
+    public String toString() {
+        String s = "{ ";
+        for (int i = 0; i < nbElements; i++) {
+            if (i==nbElements-1)s=s +intTab[i] +" }";
+            else s = s  + intTab[i] + ", ";
+
+        }
+
+        if (nbElements2!=0)
+            s=s+"\n{ ";
+        for (int i = 0; i < nbElements2; i++) {
+            if (i==nbElements2-1)s=s +intTab2[i] +" }";
+            else s = s  + intTab2[i] + ", ";
+
+        }
+        if (nbElements3!=0)
+            s=s+"\n{ ";
+        for (int i = 0; i < nbElements3; i++) {
+            if (i==nbElements3-1)s=s +intTab3[i] +" }";
+            else s = s  + intTab3[i] + ", ";
+
+        }
+
+
+        return s;
+    }
+
+    private int formule(int x){
+       return x*2;
+    }
+
+    public void appFormulea(){
+        for (int i = 0 ; i < nbElements ; i++ ){
+            intTab[i]=formule(intTab[i]);
+        }
+    }
+
+
 
     public void minMax(){
         mintab=intTab[0];
@@ -60,32 +89,7 @@ public class vectorHelper {
             intTab[i]=this.intTab2[i];
     }
 
-    public String toString() {
-        String s = "{ ";
-        for (int i = 0; i < nbElements; i++) {
-            if (i==nbElements-1)s=s +intTab[i] +" }";
-           else s = s  + intTab[i] + ", ";
 
-        }
-
-        if (nbElements2!=0)
-        s=s+"\n{ ";
-        for (int i = 0; i < nbElements2; i++) {
-            if (i==nbElements2-1)s=s +intTab2[i] +" }";
-            else s = s  + intTab2[i] + ", ";
-
-        }
-        if (nbElements3!=0)
-        s=s+"\n{ ";
-        for (int i = 0; i < nbElements3; i++) {
-            if (i==nbElements3-1)s=s +intTab3[i] +" }";
-            else s = s  + intTab3[i] + ", ";
-
-        }
-
-
-        return s;
-    }
 
     public void somme2Vecs() throws differentLengthExceeption {
         if(nbElements!= nbElements2) throw new differentLengthExceeption();
