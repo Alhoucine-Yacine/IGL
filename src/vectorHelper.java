@@ -213,7 +213,7 @@ public class vectorHelper {
         }
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------\n"+ v);
         System.out.println("Good bye my friend !");
-
+        System.out.println("Good bye my friend !");
 
     }
 }
